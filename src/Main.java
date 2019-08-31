@@ -2,13 +2,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //Scanner scanner = new Scanner(System.in);
-        String s = "we found a treasure!";
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        int l = scanner.nextInt();
         for(char x : s.toCharArray()){
-            if(x == '!' || x == ' ')
-                System.out.print(x);
+            if('a'<=x && x<='z') {
+                int a = (x - 'a' + l) % 26;
+                System.out.print((char) (a + 'a'));
+            }
             else
-                System.out.print((char)('z'-x+'a'));
+                System.out.print(x);
         }
     }
 }
